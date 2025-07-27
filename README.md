@@ -392,3 +392,4 @@ This template uses [Remix](https://remix.run). The following Shopify tools are a
 - [Shopify Functions](https://shopify.dev/docs/api/functions)
 - [Getting started with internationalizing your app](https://shopify.dev/docs/apps/best-practices/internationalization/getting-started)
 >>>>>>> 84b30fb (Initial Commit)
+"# Announcement-Bar-App" 
