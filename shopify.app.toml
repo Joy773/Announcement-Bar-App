@@ -3,11 +3,12 @@
 client_id = "ba8cbd11e6e0f570bf105aaaff67176f"
 name = "Announcement-Bar-App"
 handle = "announcement-bar-app-20"
-application_url = "https://example.com/"
+application_url = "https://indicating-safer-specialty-imagine.trycloudflare.com"
 embedded = true
 
 [build]
 include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-07"
@@ -25,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = ["https://indicating-safer-specialty-imagine.trycloudflare.com/auth/callback", "https://indicating-safer-specialty-imagine.trycloudflare.com/auth/shopify/callback", "https://indicating-safer-specialty-imagine.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
