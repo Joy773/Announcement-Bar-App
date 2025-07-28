@@ -1,0 +1,105 @@
+{% comment %}
+  Announcement Bar Snippet
+  Displays the announcement bar with saved settings from metafields
+{% endcomment %}
+
+{% comment %} Debug: Check if metafields exist {% endcomment %}
+{% assign announcement_title = shop.metafields.announcement_bar.title.value %}
+{% assign announcement_color = shop.metafields.announcement_bar.color.value %}
+{% assign announcement_button_color = shop.metafields.announcement_bar.buttonColor.value %}
+{% assign announcement_bg_color = shop.metafields.announcement_bar.barBgColor.value %}
+
+{% comment %} Debug output {% endcomment %}
+<!-- Debug: Title = {{ announcement_title }} -->
+<!-- Debug: Color = {{ announcement_color }} -->
+<!-- Debug: Button Color = {{ announcement_button_color }} -->
+<!-- Debug: BG Color = {{ announcement_bg_color }} -->
+
+{% comment %} Check if section setting exists and is enabled {% endcomment %}
+{% assign show_announcement_bar = section.settings.show_announcement_bar | default: true %}
+
+{% if announcement_title and announcement_title != blank and show_announcement_bar %}
+  <style>
+    .announcement-bar {
+      background-color: {{ announcement_bg_color | default: '#f4f6f8' }};
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border-bottom: 1px solid #dfe3e8;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .announcement-bar__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 1200px;
+      width: 100%;
+    }
+    
+    .announcement-bar__title {
+      color: {{ announcement_color | default: '#000000' }};
+      font-weight: 600;
+      font-size: 18px;
+      margin: 0;
+      text-align: center;
+    }
+    
+    .announcement-bar__button {
+      background-color: {{ announcement_button_color | default: '#008060' }};
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 20px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .announcement-bar__button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    
+    @media (max-width: 768px) {
+      .announcement-bar {
+        padding: 8px 16px;
+      }
+      
+      .announcement-bar__content {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .announcement-bar__title {
+        font-size: 16px;
+      }
+      
+      .announcement-bar__button {
+        font-size: 14px;
+        padding: 6px 16px;
+      }
+    }
+  </style>
+  
+  <div class="announcement-bar">
+    <div class="announcement-bar__content">
+      <span class="announcement-bar__title">
+        {{ announcement_title }}
+      </span>
+      
+      <a href="{{ routes.root_url }}collections/all" class="announcement-bar__button">
+        Shop Now
+      </a>
+    </div>
+  </div>
+{% endif %} 

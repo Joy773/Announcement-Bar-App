@@ -1,0 +1,23 @@
+{% comment %}
+  Announcement Bar App Block
+  Fetches saved announcement bar data from metafields and displays it
+{% endcomment %}
+
+{% render 'announcement-bar' %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "target": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement Bar Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "This block displays the announcement bar configured in your app. The content and styling are managed through the app settings."
+    }
+  ]
+}
+{% endschema %} 

@@ -3,7 +3,7 @@
 client_id = "ba8cbd11e6e0f570bf105aaaff67176f"
 name = "Announcement-Bar-App"
 handle = "announcement-bar-app-20"
-application_url = "https://indicating-safer-specialty-imagine.trycloudflare.com"
+application_url = "https://fever-cod-ideal-displays.trycloudflare.com"
 embedded = true
 
 [build]
@@ -23,10 +23,11 @@ api_version = "2025-07"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,write_metaobjects,read_metaobjects"
 
 [auth]
-redirect_urls = ["https://indicating-safer-specialty-imagine.trycloudflare.com/auth/callback", "https://indicating-safer-specialty-imagine.trycloudflare.com/auth/shopify/callback", "https://indicating-safer-specialty-imagine.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://fever-cod-ideal-displays.trycloudflare.com/auth/callback", "https://fever-cod-ideal-displays.trycloudflare.com/auth/shopify/callback", "https://fever-cod-ideal-displays.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
+
